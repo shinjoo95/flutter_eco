@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blog/components/custom_elevated_button.dart';
 import 'package:flutter_blog/pages/post/home_page.dart';
 import 'package:flutter_blog/pages/user/join.dart';
+import 'package:flutter_blog/util/validator_util.dart';
 import 'package:get/get.dart';
 import '../../components/custom_text_form_field.dart';
 
@@ -49,16 +50,25 @@ class loginPage extends StatelessWidget {
       //데이터를 한번에 넘기기 위해 , 유효성 검사를 한꺼번에 하기 위해
       child: Column(
         children: [
-          CustomTextFormField(hint: "아이디", funValidator: (value){
-          },),
-          CustomTextFormField(hint: "비밀번호", funValidator: (value){}),
+          CustomTextFormField(hint: "아이디", funValidator: validateUsername()),
+          CustomTextFormField(hint: "비밀번호", funValidator: validatePassword()),
           SizedBox(
             height: 10,
           ),
-              CustomElevatedButton(text: "로그인", pageRoute: () => Get.to(HomePage()),),
-              SizedBox(height: 10,),
-              CustomElevatedButton(text: "회원가입", pageRoute: () => Get.to(joinPage()),),
-
+          CustomElevatedButton(
+              text: "로그인",
+              pageRoute: () {
+                if (_formKey.currentState!.validate()) {
+                  Get.to(HomePage());
+                }
+              }),
+          SizedBox(
+            height: 10,
+          ),
+          CustomElevatedButton(
+            text: "회원가입",
+            pageRoute: () => Get.to(joinPage()),
+          ),
         ],
       ),
     );

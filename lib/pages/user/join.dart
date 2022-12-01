@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/components/custom_elevated_button.dart';
 import 'package:flutter_blog/pages/user/login.dart';
+import 'package:flutter_blog/util/validator_util.dart';
 import 'package:get/get.dart';
 import 'package:validators/validators.dart';
 
@@ -46,21 +47,12 @@ class joinPage extends StatelessWidget {
       //데이터를 한번에 넘기기 위해 , 유효성 검사를 한꺼번에 하기 위해
       child: Column(
         children: [
-          CustomTextFormField(hint: "아이디", funValidator: (String? value){
-            if(value!.isEmpty){
-              return "공백 매꿔라.";
-            }else if(!isAlpha(value)){
-              return "아이디는 영어로.";
-            }else if(value.length < 5){
-              return "아이디가 너무 짧아";
-            }else{
-              return null;
-            }
-          }),
-          CustomTextFormField(hint: "비밀번호", funValidator: (value){}),
-          CustomTextFormField(hint: "ex)950929", funValidator: (value){}),
-          CustomTextFormField(hint: "010-xxxx-xxxx", funValidator: (value){}),
-          CustomTextFormField(hint: "이메일", funValidator: (value){}),
+          CustomTextFormField(hint: "아이디", funValidator: validateUsername()
+          ),
+          CustomTextFormField(hint: "비밀번호", funValidator: validatePassword()),
+          CustomTextFormField(hint: "ex)950929", funValidator: validateBirth()),
+          CustomTextFormField(hint: "010xxxxxxxx", funValidator: validateNumber()),
+          CustomTextFormField(hint: "이메일", funValidator: validateEmail()),
           SizedBox(
             height: 20,
           ),
