@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
               Divider(),
               TextButton(
                   onPressed: () {
-                    Get.to(loginPage());
+                    Get.off(loginPage());
                   },
                   child: Text(
                     "로그아웃",

@@ -81,7 +81,7 @@ Function validateContent(){
   return (String? value){
     if(value!.isEmpty){
       return "내용을 적어주세요";
-    }else if(value.length > 500){
+    }else if(value.length > 1000){
       return "내용이 너무 길어요";
     }else{
       return null;
