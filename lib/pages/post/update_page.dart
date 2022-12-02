@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class updatePage extends StatelessWidget {
-  const updatePage({Key? key}) : super(key: key);
+class UpdatePage extends StatelessWidget {
+  const UpdatePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Text("글수정화면"),
+      ),
+    );
   }
 }

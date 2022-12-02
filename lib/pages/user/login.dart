@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/components/custom_elevated_button.dart';
+import 'package:flutter_blog/calendar.dart';
 import 'package:flutter_blog/pages/post/home_page.dart';
 import 'package:flutter_blog/pages/user/join.dart';
 import 'package:flutter_blog/util/validator_util.dart';
@@ -63,14 +64,17 @@ class loginPage extends StatelessWidget {
                 }
               }),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
-          CustomElevatedButton(
-            text: "회원가입",
-            pageRoute: () => Get.to(joinPage()),
-          ),
+          TextButton(
+              onPressed: () {
+                Get.to(joinPage());
+              },
+              child: Text("아직 회원이 아니싱가 ?"))
         ],
+
       ),
+
     );
   }
 }
