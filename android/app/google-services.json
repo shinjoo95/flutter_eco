@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1081545748472",
+    "project_id": "youth-fcdd4",
+    "storage_bucket": "youth-fcdd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081545748472:android:831fa465e151d2a2dbf00d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081545748472-udocb80kdl0tqiij6ohvpu1cjqv3gghn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZZJRM9V-ic4Jsd6SKnciQi9sTaQEqeFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081545748472-udocb80kdl0tqiij6ohvpu1cjqv3gghn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

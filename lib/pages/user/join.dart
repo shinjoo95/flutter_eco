@@ -10,6 +10,7 @@ import '../../components/custom_text_form_field.dart';
 class joinPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,12 +48,11 @@ class joinPage extends StatelessWidget {
       //데이터를 한번에 넘기기 위해 , 유효성 검사를 한꺼번에 하기 위해
       child: Column(
         children: [
-          CustomTextFormField(hint: "아이디", funValidator: validateUsername()
+          CustomTextFormField(hint: "이메일", funValidator: validateEmail(),
           ),
-          CustomTextFormField(hint: "비밀번호", funValidator: validatePassword()),
+          CustomTextFormField(hint: "비밀번호", funValidator: validatePassword(),),
           CustomTextFormField(hint: "ex)950929", funValidator: validateBirth()),
           CustomTextFormField(hint: "010xxxxxxxx", funValidator: validateNumber()),
-          CustomTextFormField(hint: "이메일", funValidator: validateEmail()),
           SizedBox(
             height: 20,
           ),

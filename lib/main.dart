@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/pages/post/home_page.dart';
-import 'package:flutter_blog/pages/user/join.dart';
+import 'package:flutter_blog/components/auth_controller.dart';
+import 'package:flutter_blog/login1.dart';
 import 'package:flutter_blog/pages/user/login.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 
-import 'calendar.dart';
 
-
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();    //비동기 방식으로 사용되는 메서드
+  Firebase.initializeApp().then((value)=> Get.put(AuthController()));
   runApp(MyApp());
 }
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

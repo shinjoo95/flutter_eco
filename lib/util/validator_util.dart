@@ -1,4 +1,5 @@
 
+import 'package:get/get.dart';
 import 'package:validators/validators.dart';
 
 Function validateUsername(){
@@ -28,7 +29,7 @@ Function validatePassword(){
 Function validateEmail(){
   return (String? value){
     if(value!.isEmpty){
-      return "공백 안됨.";
+      return "이메일을 입력하세요.";
     }else if(!isAlphanumeric(value)){
       return "이메일 확인 부탁.";
     }else if(isEmail(value)){
@@ -88,3 +89,4 @@ Function validateContent(){
     }
   };
 }
+

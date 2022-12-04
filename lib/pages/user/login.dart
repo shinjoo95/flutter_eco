@@ -51,7 +51,7 @@ class loginPage extends StatelessWidget {
       //데이터를 한번에 넘기기 위해 , 유효성 검사를 한꺼번에 하기 위해
       child: Column(
         children: [
-          CustomTextFormField(hint: "아이디", funValidator: validateUsername()),
+          CustomTextFormField(hint: "이메일", funValidator: validateEmail()),
           CustomTextFormField(hint: "비밀번호", funValidator: validatePassword()),
           SizedBox(
             height: 10,

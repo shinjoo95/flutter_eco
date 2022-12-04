@@ -4,6 +4,9 @@ class CustomTextFormField extends StatelessWidget {
 final String hint;
 final funValidator;
 final String? value;
+var emailController = TextEditingController();
+var passwordController = TextEditingController();
+
 
 CustomTextFormField({required this.hint, required this.funValidator, this.value});
 
@@ -12,6 +15,7 @@ CustomTextFormField({required this.hint, required this.funValidator, this.value}
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
+
         initialValue: value ?? "",
         validator: funValidator,
         obscureText: hint == "비밀번호" ? true : false,
